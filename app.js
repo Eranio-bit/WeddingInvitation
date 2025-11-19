@@ -1,5 +1,5 @@
 // Your GitHub raw image URL
-const githubImageURL = "https://raw.githubusercontent.com/USERNAME/REPO/main/images/photo.jpg";
+const githubImageURL = "https://github.com/Eranio-bit/WeddingGift/blob/main/image.png?raw=true";
 
 // Your text
 const text = "Hello! This image is loaded from GitHub.";
