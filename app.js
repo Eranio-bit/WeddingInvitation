@@ -5,37 +5,37 @@ const introEl = document.getElementById("intro");
 const introGif = document.getElementById("introGif");
 const mainEl = document.getElementById("main");
 
-// Only run intro animation if these elements exist
-if (introEl && introGif && mainEl) {
+if (introEl && introGif) {
 
-  // Start hidden
   introEl.style.opacity = "0";
   introGif.style.opacity = "0";
 
-  // Step 1 — wait 1 second and fade in GIF
+  // 1. Fade in after 1 second
   setTimeout(() => {
+
     introEl.style.transition = "opacity 1s ease";
     introGif.style.transition = "opacity 1s ease";
 
     introEl.style.opacity = "1";
     introGif.style.opacity = "1";
 
-    // Step 2 — fade-out after 1800ms
+    // 2. Fade out after 1800 ms
     setTimeout(() => {
+
       introEl.style.opacity = "0";
       introGif.style.opacity = "0";
 
-      // Step 3 — after fade-out, hide intro and show main
+      // 3. After fade-out (mobile friendly redirect)
       setTimeout(() => {
-        introEl.style.display = "none";
-        mainEl.classList.remove("hidden");
-      }, 1000); // matches fade-out duration
 
-    }, 1800); // delay before fade-out
+        window.location.href = "invite.html";
 
-  }, 1000); // initial delay
+      }, 1000); // allow fade-out to finish
+
+    }, 1800);
+
+  }, 1000);
 }
-
 
 
 // -------------------------
@@ -46,7 +46,6 @@ const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modalImg");
 const closeBtn = document.getElementById("closeBtn");
 
-// Run modal logic only if invitation elements exist
 if (qrImage && modal && modalImg && closeBtn) {
 
   qrImage.addEventListener("click", () => {
