@@ -1,5 +1,5 @@
 // Your GitHub raw image URL
-const githubImageURL = "https://github.com/Eranio-bit/WeddingGift/blob/6696db5da1bc8080fad24fbda7555ae7e2f933d9/image.png?raw=true";
+const githubImageURL = "https://raw.githubusercontent.com/Eranio-bit/WeddingGift/6696db5da1bc8080fad24fbda7555ae7e2f933d9/image.png";
 
 // Your text
 const text = "  .--------._
