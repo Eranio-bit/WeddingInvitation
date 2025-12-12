@@ -3,38 +3,47 @@
 // --------------------
 const introEl = document.getElementById("intro");
 const introGif = document.getElementById("introGif");
-const mainEl = document.getElementById("main");
+const titleEl = document.querySelector("h1"); // Get the title text
 
-if (introEl && introGif) {
-
+if (introEl && introGif && titleEl) {
+  
+  // Initially: show text, hide GIF
   introEl.style.opacity = "0";
   introGif.style.opacity = "0";
+  titleEl.style.opacity = "1";
+  titleEl.style.transition = "opacity 0.5s ease";
+  introEl.style.transition = "opacity 0.5s ease";
+  introGif.style.transition = "opacity 0.5s ease";
 
-  // 1. Fade in after 1 second
+  // 1. Show text for 1 second
   setTimeout(() => {
-
-    introEl.style.transition = "opacity 1s ease";
-    introGif.style.transition = "opacity 1s ease";
-
-    introEl.style.opacity = "1";
-    introGif.style.opacity = "1";
-
-    // 2. Fade out after 1800 ms
+    
+    // Fade out text
+    titleEl.style.opacity = "0";
+    
+    // After text fades out, show GIF
     setTimeout(() => {
-
-      introEl.style.opacity = "0";
-      introGif.style.opacity = "0";
-
-      // 3. After fade-out (mobile friendly redirect)
+      
+      introEl.style.opacity = "1";
+      introGif.style.opacity = "1";
+      
+      // 2. After GIF plays for 1800ms, transition to invite page
       setTimeout(() => {
-
-        window.location.href = "invite.html";
-
-      }, 1000); // allow fade-out to finish
-
-    }, 1800);
-
-  }, 1000);
+        
+        // Fade out GIF
+        introEl.style.opacity = "0";
+        introGif.style.opacity = "0";
+        
+        // 3. After fade-out completes, redirect
+        setTimeout(() => {
+          window.location.href = "invite.html";
+        }, 500); // allow fade-out to finish
+        
+      }, 1800); // GIF plays for 1800ms
+      
+    }, 500); // text fade-out duration
+    
+  }, 1000); // text shows for 1 second
 }
 
 
