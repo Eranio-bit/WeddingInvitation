@@ -12,7 +12,7 @@ if (introEl && introGif && titleEl) {
   introGif.style.opacity = "0";
   titleEl.style.opacity = "1";
   titleEl.style.transition = "opacity 0.5s ease";
-  introEl.style.transition = "opacity 0.1s ease";
+  introEl.style.transition = "opacity 0.2s ease";
   introGif.style.transition = "opacity 0.5s ease";
 
   // 1. Show text for 1 second
@@ -42,7 +42,7 @@ if (introEl && introGif && titleEl) {
           window.location.href = "invite.html";
         }, 500); // allow fade-out to finish
         
-      }, 3000); // GIF plays for 1800ms
+      }, 3000); // GIF plays for 3200ms
       
     }, 500); // text fade-out duration
     
