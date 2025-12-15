@@ -6,6 +6,9 @@ const introGif = document.getElementById("introGif");
 const titleEl = document.getElementById("introTitle");
 
 if (introEl && introGif && titleEl) {
+
+  // Preload invite page
+  fetch("invite.html", { cache: "force-cache" });
   
   // Initially: show text, hide GIF (don't load GIF yet)
   introEl.style.opacity = "0";
@@ -14,6 +17,8 @@ if (introEl && introGif && titleEl) {
   titleEl.style.transition = "opacity 0.5s ease";
   introEl.style.transition = "opacity 0.2s ease";
   introGif.style.transition = "opacity 0.5s ease";
+
+  introGif.removeAttribute("src");
 
   // 1. Show text for 1 second
   setTimeout(() => {
