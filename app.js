@@ -1,11 +1,7 @@
-// --------------------
-// INTRO PAGE HANDLING
-// --------------------
-const introEl = document.getElementById("intro");
-const introGif = document.getElementById("introGif");
-const titleEl = document.getElementById("introTitle");
-
 if (introEl && introGif && titleEl) {
+
+  // 🔥 Preload invite page for instant transition
+  fetch("invite.html", { cache: "force-cache" });
 
   // Initial state
   introEl.style.opacity = "0";
@@ -18,7 +14,6 @@ if (introEl && introGif && titleEl) {
 
   // Prevent browser from preloading the GIF
   introGif.removeAttribute("src");
-
   // 1. Show text for 1 second
   setTimeout(() => {
 
